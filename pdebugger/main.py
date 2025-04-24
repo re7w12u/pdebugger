@@ -1,6 +1,6 @@
 from os import getenv
 
-def initialize_flask_server_debugger_if_needed():
+def initialize_debugger_if_needed():
     if getenv("DEBUGGER") == "True":
         import multiprocessing
 
