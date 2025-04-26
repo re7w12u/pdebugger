@@ -1,6 +1,6 @@
 from os import getenv
 
-def initialize_debugger_if_needed(port_number):
+def initialize_debugger_if_needed(port_number=None):
     if getenv("DEBUGGER") == "True":        
         import debugpy
         
