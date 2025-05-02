@@ -3,10 +3,13 @@ from os import getenv
 def initialize_debugger_if_needed(port_number=None):
     if getenv("DEBUGGER") == "True":        
         import debugpy
+        print("pdebugger - init")
         
         if port_number is None and getenv("DEBUGGER_PORT") is not None:
             port_number = int(getenv("DEBUGGER_PORT"))
 
+        print(f"pdebugger - port_number {port_number}")
+        
         if port_number is None:
             raise Exception("No port number provided for debugger. Set DEBUGGER_PORT environment variable or pass it as an argument.")
         
